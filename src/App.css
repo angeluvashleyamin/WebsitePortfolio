@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+@keyframes revealLeft {
+  from { clip-path: inset(0 100% 0 0); opacity: 0; }
+  to   { clip-path: inset(0 0% 0 0);   opacity: 1; }
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg:           #080c14;
+  --bg-alt:       #0e1520;
+  --cream:        #e8edf5;
+  --muted:        #6b7fa0;
+  --accent:       #c0a96e;
+  --accent2:      #5b9bd5;
+
+  --font-display: 'Playfair Display', serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  --size-name:    clamp(2rem, 5vw, 3.5rem);
+  --size-role:    0.9rem;
+  --size-quote:   clamp(1rem, 2.5vw, 1.4rem);
+  --size-heading: clamp(2.5rem, 5vw, 4rem);
+  --size-body:    1.1rem;
+
+  --anim-speed:   0.9s;
+  --anim-curve:   cubic-bezier(0.77, 0, 0.18, 1);
+
+  --img-size:     160px;
+  --img-radius:   7px;
+  --gap:          1.5rem;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--cream);
+  font-family: var(--font-body);
+  height: 100%;
+}
+
+.main > div {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  position: relative;
+  padding: 4rem clamp(2rem, 8vw, 8rem);
+}
+
+.Section1 .quotetext,
+.Section2 h1,
+.Section2 h2,
+.Section3 h1 {
+  opacity: 0;
+}
+
+.Section1.animate-done .quotetext {
+  animation: revealLeft var(--anim-speed) var(--anim-curve) 0.4s forwards;
+}
+.Section2.animate-done h1 {
+  animation: revealLeft var(--anim-speed) var(--anim-curve) 0s forwards;
+}
+.Section2.animate-done h2 {
+  animation: revealLeft var(--anim-speed) var(--anim-curve) 0.2s forwards;
+}
+.Section3.animate-done h1 {
+  animation: revealLeft var(--anim-speed) var(--anim-curve) 0.4s forwards;
+}
+
+.Section1 {
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap);
+  text-align: center;
+}
+
+.Section1::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 60% 40%, rgba(201,169,110,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.Section1 img {
+  width: var(--img-size);
+  height: var(--img-size);
+  object-fit: cover;
+  border-radius: var(--img-radius);
+  border: 1px solid rgba(201,169,110,0.3);
+  box-shadow: 0 0 40px rgba(201,169,110,0.1);
+}
+
+.Section1 h1 {
+  font-family: var(--font-display);
+  font-size: var(--size-name);
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  max-width: 700px;
+}
+
+.Section1 h2 {
+  font-family: var(--font-body);
+  font-size: var(--size-role);
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.quotetext {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--size-quote);
+  font-weight: 400;
+  color: var(--muted);
+  max-width: 600px;
+  text-align: center;
+  margin-top: 90px;
+}
+
+.Section2 {
+  background-color: var(--bg-alt);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--gap);
+  padding-top: 4rem;
+}
+
+.Section2 h1 {
+  font-family: var(--font-display);
+  font-size: var(--size-heading);
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.02em;
+}
+
+.Section2 h2 {
+  font-family: var(--font-display);
+  font-size: var(--size-name);
+  font-weight: 700;
+  color: var(--cream);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  max-width: 700px;
+  
+}
+
+.Section3 {
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: var(--gap);
+  padding-top: 4rem;
+}
+
+.Section3 h1 {
+  font-family: var(--font-display);
+  font-size: var(--size-heading);
+  font-weight: 700;
+  color: var(--accent2);
+  letter-spacing: -0.02em;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
