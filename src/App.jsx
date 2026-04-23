@@ -14,7 +14,7 @@ const projects = [
   {
     id: 2,
     title: "Portfolio Site",
-    tag: "Design",
+    tag: "Personal Portfolio",
     year: "2026",
     description: "A simple personal portfolio website",
     tech: ["React", "CSS", "HTML", "JavaScript"],
