@@ -388,3 +388,8 @@ body {
 }
 
 .modal-link:hover { gap: 0.6rem; }
+
+a.project-card {
+  text-decoration: none;
+  display: flex;
+}

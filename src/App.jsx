@@ -28,7 +28,7 @@ const projects = [
     tag: "Web App, Chat site",
     year: "2026",
     description:
-      "Personal portfolio crafted with Vite + React. Emphasis on motion, typography, and a refined dark aesthetic.",
+      "Anonymous web chat project.",
     tech: ["HTML", "CSS", "JavaScript", "SupaBase"],
     link: "https://anonchatangel.netlify.app/",
   },
@@ -103,7 +103,7 @@ function App() {
         <h1>Projects</h1>
         <div className="projects-grid">
           {projects.map((p, i) => (
-            <button
+            <a
               key={p.id}
               className="project-card"
               style={{ animationDelay: `${0.1 + i * 0.1}s` }}
@@ -116,7 +116,7 @@ function App() {
               <h3 className="card-title">{p.title}</h3>
               <p className="card-snippet">{p.description}</p>
               <span className="card-arrow">→</span>
-            </button>
+            </a>
           ))}
         </div>
       </div>
