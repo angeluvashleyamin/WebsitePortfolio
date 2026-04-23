@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import "./App.css";
 
 const projects = [
@@ -7,8 +7,7 @@ const projects = [
     title: "Sputify",
     tag: "Web App, Music Player",
     year: "2025",
-    description:
-      "A simple web music player.",
+    description: "A simple web music player.",
     tech: ["Vite", "Node.js", "HTML", "CSS", "JavaScript"],
     link: "https://sputipay.netlify.app/",
   },
@@ -17,8 +16,7 @@ const projects = [
     title: "Portfolio Site",
     tag: "Design",
     year: "2026",
-    description:
-      "A simple personal portfolio website",
+    description: "A simple personal portfolio website",
     tech: ["React", "CSS", "HTML", "JavaScript"],
     link: "https://websiteportfolioamin.netlify.app/",
   },
@@ -27,43 +25,13 @@ const projects = [
     title: "AnonChat",
     tag: "Web App, Chat site",
     year: "2026",
-    description:
-      "Anonymous web chat project.",
+    description: "Anonymous web chat project.",
     tech: ["HTML", "CSS", "JavaScript", "SupaBase"],
     link: "https://anonchatangel.netlify.app/",
   },
 ];
 
-function ProjectModal({ project, onClose }) {
-  useEffect(() => {
-    const handleKey = (e) => e.key === "Escape" && onClose();
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, [onClose]);
-
-  return (
-    <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal-card" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose}>✕</button>
-        <span className="modal-tag">{project.tag}</span>
-        <h2 className="modal-title">{project.title}</h2>
-        <p className="modal-desc">{project.description}</p>
-        <div className="modal-tech">
-          {project.tech.map((t) => (
-            <span key={t} className="tech-pill">{t}</span>
-          ))}
-        </div>
-        <a href={project.link} className="modal-link" target="_blank" rel="noreferrer">
-          View Project →
-        </a>
-      </div>
-    </div>
-  );
-}
-
 function App() {
-  const [selected, setSelected] = useState(null);
-
   useEffect(() => {
     const sections = document.querySelectorAll(".animate-section");
     const observer = new IntersectionObserver(
@@ -103,11 +71,14 @@ function App() {
         <h1>Projects</h1>
         <div className="projects-grid">
           {projects.map((p, i) => (
+
             <a
               key={p.id}
+              href={p.link}
+              target="_blank"
+              rel="noreferrer"
               className="project-card"
               style={{ animationDelay: `${0.1 + i * 0.1}s` }}
-              onClick={() => setSelected(p)}
             >
               <div className="card-top">
                 <span className="card-tag">{p.tag}</span>
@@ -120,10 +91,6 @@ function App() {
           ))}
         </div>
       </div>
-
-      {selected && (
-        <ProjectModal project={selected} onClose={() => setSelected(null)} />
-      )}
     </div>
   );
 }
