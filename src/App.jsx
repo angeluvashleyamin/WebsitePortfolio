@@ -35,7 +35,7 @@ function App() {
 
       <div className="Section2 animate-section">
         <h1>About</h1>
-        <h2>Blah Blah Blah</h2>
+        <h2>I’m a 23-year-old Computer Science student who’s usually at my computer. I’m still learning about tech and figuring things out step by step..</h2>
       </div>
 
       <div className="Section3 animate-section">
