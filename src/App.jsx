@@ -4,43 +4,33 @@ import "./App.css";
 const projects = [
   {
     id: 1,
-    title: "Project Alpha",
-    tag: "Web App",
-    year: "2024",
+    title: "Sputify",
+    tag: "Web App, Music Player",
+    year: "2025",
     description:
-      "A full-stack web application built with React and Node.js. Focused on clean UX and performant data handling.",
-    tech: ["React", "Node.js", "MongoDB"],
-    link: "#",
+      "A simple web music player.",
+    tech: ["Vite", "Node.js", "HTML", "CSS", "JavaScript"],
+    link: "https://sputipay.netlify.app/",
   },
   {
     id: 2,
     title: "Portfolio Site",
     tag: "Design",
-    year: "2024",
+    year: "2026",
     description:
-      "Personal portfolio crafted with Vite + React. Emphasis on motion, typography, and a refined dark aesthetic.",
-    tech: ["React", "CSS", "Vite"],
-    link: "#",
+      "A simple personal portfolio website",
+    tech: ["React", "CSS", "HTML", "JavaScript"],
+    link: "https://websiteportfolioamin.netlify.app/",
   },
   {
     id: 3,
-    title: "Study Tracker",
-    tag: "Productivity",
-    year: "2023",
+    title: "AnonChat",
+    tag: "Web App, Chat site",
+    year: "2026",
     description:
-      "A lightweight tool to log study sessions, track progress over time, and visualize weekly goals.",
-    tech: ["JavaScript", "LocalStorage", "Chart.js"],
-    link: "#",
-  },
-  {
-    id: 4,
-    title: "API Explorer",
-    tag: "Tool",
-    year: "2023",
-    description:
-      "A minimal REST API testing utility built to learn HTTP fundamentals and async JavaScript patterns.",
-    tech: ["Vanilla JS", "Fetch API", "CSS Grid"],
-    link: "#",
+      "Personal portfolio crafted with Vite + React. Emphasis on motion, typography, and a refined dark aesthetic.",
+    tech: ["HTML", "CSS", "JavaScript", "SupaBase"],
+    link: "https://anonchatangel.netlify.app/",
   },
 ];
 
